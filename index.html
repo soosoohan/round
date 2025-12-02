@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang=en">
+<head>
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4YZHC1G9FN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4YZHC1G9FN');
+    </script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Moeum Round - Korean hangman Game | Soosooland</title>
+
+<!-- SEO Meta Tags -->
+
+<meta name="description" content="Guess hidden Korean consonants with only vowels revealed. Test your Korean language skills with this fun word puzzle game. Free online game.">
+<meta name="keywords" content="모음 퀴즈, 초성 퀴즈, hangman, 행맨, moeum quiz, korean puzzle, vowel game, hangul game, korean learning, word puzzle, language game">
+<meta name="author" content="Soosooland">
+
+<!-- Open Graph -->
+
+<meta property="og:title" content="Moeum Quiz - Korean Vowel Puzzle Game">
+<meta property="og:description" content="Guess hidden consonants with only vowels revealed. Fun Korean word puzzle game.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://soosooland.com/round/">
+<meta property="og:image" content="https://soosooland.com/images/moeum.jpeg">
+<meta property="og:site_name" content="Soosooland">
+<link rel="canonical" href="https://soosooland.com/round/">
+<link rel="stylesheet" href="https://soosooland.com/css/protection.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Moeum Round",
+  "description": "Korean vowel puzzle game where players guess hidden consonants to complete sentences",
+  "url": "https://soosooland.com/round/",
+  "genre": "Puzzle",
+  "gamePlatform": "Web browser",
+  "playMode": "SinglePlayer",
+  "inLanguage": ["en", "ko"]
+}
+</script>
+<script src="https://soosooland.com/js/protection.js"></script>
+<style>
+  * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #145454;
+      text-align: center;
+      padding: 30px;
+      margin: 0;
+    }
+
+  h1 { font-size: 3em; margin-bottom:0; color: #EF0; }
+  h2 { font-size:1.2em; color: #EF0; }
+
+   
+  header > div {
+    color:#fff;
+    line-height: 140%;
+    margin:30px auto;
+  }
+    header > div {
+      color: #fff;
+      line-height: 140%;
+      margin: 30px auto;
+    }
+
+    header {
+      min-height: 380px;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0;
+      color: #EF0;;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      color: white;
+    }
+
+    .game_container {
+      background-color: #0E756D;
+      color: white;
+      width: 90%;
+      max-width:800px;      
+      margin: auto;
+      padding: 20px;
+      border-radius: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .game-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .game-buttons button {
+      width: 200px;
+      height: 52px;
+      padding: 16px 0;
+      font-size: 1.1em;
+      cursor: pointer;
+      border: none;
+      background-color: #CFF9FF;
+      color: #0A6A79;
+      border-radius: 12px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 5px;
+    }
+
+    .game-buttons button:hover {
+      background-color: #1baf8f;
+      color: #fff;
+    }
+
+  .back-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        font-size: 1em;
+        background-color: #FFD6BA;
+        color: #7A2E2E;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 100;
+    }
+
+    .back-button:hover {
+        background-color: #FF9494;
+        color: white;
+    }
+
+    /* 반응형 레이아웃 */
+    @media (min-width: 800px) {
+      .game-buttons button {
+        flex: 0 0 calc(33.333% - 20px); /* 3줄 */
+        max-width: 200px;
+      }
+    }
+
+    @media (max-width: 799px) and (min-width: 500px) {
+      .game-buttons button {
+        flex: 0 0 calc(50% - 20px); /* 2줄 */
+        max-width: 200px;
+      }
+    }
+
+    @media (max-width: 499px) {
+      .game-buttons button {
+        flex: 0 0 calc(100% - 20px); /* 1줄 */
+        max-width: 280px;
+      }
+      
+      .game_container {
+        width: 95%;
+      }
+    }
+</style>
+</head>
+<body>
+  <button class="back-button" onclick="location.href='https://soosooland.com/'">
+    Soosooland </button>
+    <div class="blackboard">
+        <div class="moeum-main" id="moeum-main">
+            <h1 class="chalk-text main-title">모음 퀴즈</h1>
+</div><h2>Korean Hangman  </h2>
+
+      <h2>자음을 추리해서 단어, 구절, 문장을 완성하는 게임이에요.</h2>
+<p style="color: #a7fff0;">게임 방법 / How to Play<br>
+
+모음은 모두 공개된 상태에서 게임이 시작됩니다.<br>
+화면 아래 자음 버튼을 클릭해 해당 자음이 포함되어 있는지 추리합니다.<br>
+정답 자음은 해당 위치에 표시되고, 오답 자음은 시도 횟수가 차감됩니다.<br>
+6번의 기회 안에 정답을 맞추면 승리!<br>
+실패하면 정답이 공개됩니다.<br>
+위에 있는 버튼들은 쉽고, 아래로 내려갈수록 어려워집니다.<br>
+The game starts with all vowels revealed.<br>
+Click the consonant buttons at the bottom to guess if the consonant is in the sentence.<br>
+Correct consonants are revealed in their positions, while incorrect guesses reduce your attempt count.<br>
+Solve the puzzle within 6 tries to win!
+If you fail, the correct sentence will be shown.<br>
+The buttons at the top are easier.</p>
+    </div>       
+
+
+    </div></div>
+
+  <div class="game_container">
+      <div class="game-buttons">
+        <button onclick="location.href='https://soosoofile.vercel.app/round05.html'">일상 대화</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round20.html'">속담 힌트있음</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round07.html'">속담 격언</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round01.html'">어린이 힌트있음</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round02.html'">어른용 힌트있음</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round09.html'">음식 힌트</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round03.html'">음식</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round21.html'">수수께끼</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round10.html'">초등 국사</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round08.html'">대륙 나라 수도</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round17.html'">고유어</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round14.html'">동물 식물</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round16.html'">중학교 국사</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round04.html'">한국 여행</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round19.html'">사자성어 힌트있음</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round06.html'">저자와 저서</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round18.html'">영화, 드라마</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round22.html'">커피 힌트있음</button>
+        <button onclick="location.href='https://soosoofile.vercel.app/round23.html'">대한민국 헌법</button>
+        
+      </div>
+  </div>
+</body>
+</html>
