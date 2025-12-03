@@ -97,7 +97,7 @@ This project is registered with the Korea Copyright Commission.
 
 ---
 
-## 🎮  모음퀴즈 주소 : https://soosooland.com/moeum-quiz/
+## 🎮  모음 라운드 주소 : https://soosooland.com/round/
 
 ## 🌟 Soosooland - Puzzle Game Hub by Han Soosoo
 
