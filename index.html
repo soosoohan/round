@@ -205,38 +205,41 @@ Game files are arranged by difficulty level, getting harder as you go down.<br><
   <div class="game_container">
       <div class="game-buttons">
         <button onclick="location.href='https://soosoofile.vercel.app/round05.html'">일상 대화</button>
-        <button onclick="playGame('sokdam')">속담</button>
+        <button onclick="playGame('sokdam', '속담')">💭 속담</button>
         <button onclick="location.href='https://soosoofile.vercel.app/round07.html'">속담 격언</button>
-        <button onclick="playGame('child')">어린이</button>
-        <button onclick="playGame('adult')">어른</button>
-        <button onclick="playGame('food')">🍽️ 음식</button>
-        <button onclick="playGame('dongmul')">🦁 동물</button>
-        <button onclick="playGame('riddles')">❓ 수수께끼</button>
-        <button onclick="playGame('chostory')">초등 국사</button>
+        <button onclick="playGame('child','어린이')">어린이</button>
+        <button onclick="playGame('adult','어른')">어른</button>
+        <button onclick="playGame('food', '음식')">🍽️ 음식</button>
+        <button onclick="playGame('dongmul', '동물')">🦁 동물</button>
+        <button onclick="playGame('riddles', '수수께끼')">❓ 수수께끼</button>
+        <button onclick="playGame('chostory', '초등 국사')">초등 국사</button>
         <button onclick="location.href='https://soosoofile.vercel.app/round08.html'">대륙 나라 수도</button>
-        <button onclick="playGame('goyu')">📚 고유어</button>
-        <button onclick="playGame('sikmul')">동물이 아닌 생물</button>
-        <button onclick="playGame('jungstory')">중학교 국사</button>
+        <button onclick="playGame('goyu','고유어')">📚 고유어</button>
+        <button onclick="playGame('sikmul', '동물이 아닌 생물')">동물이 아닌 생물</button>
+        <button onclick="playGame('jungstory', '중학교 국사')">중학교 국사</button>
         <button onclick="location.href='https://soosoofile.vercel.app/round04.html'">한국 여행</button>
-        <button onclick="playGame('saja')">사자성어</button>
+        <button onclick="playGame('saja', '사자성어')">사자성어</button>
         <button onclick="location.href='https://soosoofile.vercel.app/round19.html'">사자성어 고사성어</button>
         <button onclick="location.href='https://soosoofile.vercel.app/round06.html'">저자와 저서</button>
-        <button onclick="playGame('movie')">영화 드라마</button>
-        <button onclick="playGame('coffee')">커피</button>
-        <button onclick="playGame('law')">대한민국 헌법</button>
+        <button onclick="playGame('movie', '영화 드라마')">영화 드라마</button>
+        <button onclick="playGame('coffee', '커피와 원두')">커피와 원두</button>
+        <button onclick="playGame('law', '대한민국 헌법')">대한민국 헌법</button>
           
       </div>
   </div>
-    <script>
-function playGame(wordpool) {
-  // Vercel 게임 파일 주소 (나중에 실제 주소로 변경)
+  <script>
+function playGame(wordpool, title) {
+  // Vercel 게임 파일 주소
   const gameUrl = 'https://soosoofile.vercel.app/round.html';
   
   // 워드풀 파일 주소
   const wordpoolUrl = `https://soosooland.com/round/wordpools/${wordpool}.json`;
   
-  // 게임 페이지로 이동 (워드풀 URL을 파라미터로 전달)
-  location.href = `${gameUrl}?wordpool=${encodeURIComponent(wordpoolUrl)}`;
+  // 제목이 있으면 title 파라미터 추가, 없으면 빈 문자열
+  const titleParam = title ? `&title=${encodeURIComponent(title)}` : '';
+  
+  // 게임 페이지로 이동
+  location.href = `${gameUrl}?wordpool=${encodeURIComponent(wordpoolUrl)}${titleParam}`;
 }
 </script>
 
