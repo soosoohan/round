@@ -7,13 +7,6 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- 게임 페이지 -->
-  <url>
-    <loc>https://soosooland.com/round/round.html</loc>
-    <lastmod>2026-03-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
+ 
 </urlset>
 
