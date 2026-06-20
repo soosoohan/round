@@ -3,7 +3,7 @@
 All games are registered copyrights. Unauthorized copying or redistribution is prohibited.  
 모든 게임은 저작권 등록된 창작물입니다. 무단 복제 및 배포를 금합니다.  
 تمام گیمز کاپی رائٹ محفوظ ہیں۔ غیر مجاز نقل ممنوع ہے۔
-## 👤 모음 라운드 (Moeum Round) 
+## 👤 모음퀴즈 (Moeum Quiz) 
 
 모음이 공개된 상태에서 자음을 맞춰서 숨어있는 단어, 구절, 문장을 찾는 게임입니다.  
 This is a Korean language puzzle game where players guess the hidden consonants to complete sentences with only vowels revealed.
@@ -37,7 +37,7 @@ This is a Korean language puzzle game where players guess the hidden consonants 
 - 같은 주제인데 힌트가 있는 것과 없는 것으로  두 가지 종류가 있는 것은 음식과 속담입니다. 
   The topics that have both hint and no-hint versions are Food and Proverbs.
 
-- 현재 일상 대화, 한국의 여행지, 대륙과 나라와 수도, 노래와 가수, 음식,속담과 격언, 초등학교 국사, 중학교 국사, 동물과 식물, 저자와 저서, 고유어, 영화와 드라마 제목, 대한민국 헌법  등 다양한 주제가 있습니다. 앞으로 세계사, 상식, 초등학교 교육과정 학년별로 넣는 등 계속 추가될 예정입니다. 
+- 현재 일상 대화, 한국의 여행지, 대륙과 나라와 수도, 노래와 가수, 음식,속담과 격언, 초등학교 국사, 중학교 국사, 동물과 식물, 저자와 저서, 고유어, 영화와 드라마 제목  등 다양한 주제가 있습니다. 앞으로 세계사, 상식, 초등학교 교육과정 학년별로 넣는 등 계속 추가될 예정입니다. 
   Current topics include: Daily Conversations, Korean Travel Destinations, Continents/Countries/Capitals, Songs and Singers, Food, Proverbs and Sayings, Elementary School Korean History, Middle School Korean History, Animals and Plants, Authors and Books, Pure Korean Words, Movie and Drama Titles, and more. Future additions will include World History, General Knowledge, and Elementary School Curriculum topics organized by grade level.
 
 - 모든 자음을 다 찾을 때까지 계속되고, 다 찾으면 맞춘 자음 수에 따라 승패가 결정됩니다.
@@ -46,10 +46,16 @@ This is a Korean language puzzle game where players guess the hidden consonants 
 - 둘이 모음은 두 사용자가 대결하는 모음퀴즈이고  게임이 끝났을 때 많이 맞춘 사용자가 이깁니다.
   Doori Moeum is a two-player competitive version of the vowel quiz where users compete against each other, and whoever gets more correct answers wins.   
 
-| 사용자 user    | 👤혼자 하기 |👤혼자 하기   | 👤🆚👤 2인 대결 |  👤혼자 하기|👤혼자 하기|
-|----|----|----|----|----|----|
-|  게임 Game| 모음퀴즈 <br>Moeum-quiz |모음 라운드<br>Moeum Round<br> |  둘이 모음<br> Doori-moeun |하루모음<br> Haroo Moeum |모음 스쿨<br> Moeum School|
-|게임 종료|6회 틀리거나 정답을 맞추면 |10라운드 끝나면 |정답을 맞출 때까지| 6회 틀리거나 정답을 맞추면|모두 맞출 때까지 틀리면 다시 풀기 |
+- 모음딕과 모음스쿨은 대한민국 초등학교 교과서 어휘로 만든 학습 퀴즈입니다. 현재 1학년부터 5학년 1학기까지 어휘 4,000여 개를 수록하였으며, 이후 학기 어휘는 순차적으로 추가될 예정입니다.
+  Moeum-Dic and Moeum-School are learning quizzes built from Korean elementary school textbook vocabulary. The current version covers 4,000+ words spanning Grade 1 through the first semester of Grade 5, with additional vocabulary to be added in future updates.
+
+---
+
+| 사용자 | 👤 혼자 하기 | 👤 혼자 하기 | 👤🆚👤 2인 대결 | 👤 학습 퀴즈 |
+|---|---|---|---|---|
+| **게임** | 모음퀴즈<br>Moeum Quiz | 모음 라운드<br>Moeum Round | 둘이 모음<br>Doori-moeun | 모음스쿨 Moeum School<br>모음딕 Moeum Dict |
+| **게임 종료** | 6회 틀리거나 정답을 맞추면 | 10라운드 끝나면 | 정답을 맞출 때까지 | 모두 맞출 때까지<br>틀리면 다시 풀기 |
+
 ---
 ## ⚠️ **Copyright Protection   
 
@@ -102,7 +108,7 @@ This project is registered with the Korea Copyright Commission.
 
 ---
 
-## 🎮  모음 라운드 주소 : https://soosooland.com/round/
+## 🎮  모음퀴즈 주소 : https://soosooland.com/moeum-quiz/
 
 ## 🌟 Soosooland - Puzzle Game Hub by Han Soosoo
 
