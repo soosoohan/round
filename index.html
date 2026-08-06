@@ -70,12 +70,11 @@
 
  .language-toggle {
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 12px;
+        right: 12px;
         background: rgba(255,255,255,0.9);
-        padding: 8px;
+        padding: 6px;
         border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         z-index: 100;
     }
 
@@ -83,12 +82,12 @@
         background: #2e8b8b;
         color: white;
         border: none;
-        padding: 6px 12px;
+        padding: 6px 6px;
         margin: 2px;
-        border-radius: 5px;
+        border-radius: 4px;
         cursor: pointer;
         font-family: 'Pretendard', sans-serif;
-        font-size: clamp(0.8rem, 2vw, 1rem);
+        font-size: clamp(1rem, 2.2vw, 1.2rem);
         transition: all 0.3s ease;
     }
 
@@ -105,15 +104,6 @@
 
     .back-button:active {transform: scale(0.92);transition: transform 0.1s;}
 
-  h1 { font-size: 3em; margin-bottom:0; color: #EF0; }
-  h2 { font-size:1.2em; color: #EF0; }
-
-   
-  header > div {
-    color:#fff;
-    line-height: 140%;
-    margin:30px auto;
-  }
     header > div {
       color: #fff;
       line-height: 140%;
@@ -126,13 +116,13 @@
     }
 
     h1 {
-      font-size: 3em;
+      font-size: clamp(2.2rem, 6.6vw, 2.6rem);
       margin-bottom: 0;
       color: #EF0;;
     }
 
     h2 {
-      font-size: 1.2em;
+      font-size: clamp(1.1rem, 3.3vw, 1.3rem);
       color: white;
     }
 
@@ -236,8 +226,8 @@ margin-top: 30px;
  <button class="back-button" onclick="location.href='https://soosooland.com/'" aria-label="수수랜드 홈으로">
  <img src="https://soosooland.com/images/home.png" alt="수수랜드 홈"></button>
     <div class="language-toggle">
-                <button class="language-button active" onclick="toggleLanguage('ko')">한국어</button>
-                <button class="language-button" onclick="toggleLanguage('en')">English</button>
+                <button class="language-button active" onclick="toggleLanguage('ko')">한</button>
+                <button class="language-button" onclick="toggleLanguage('en')">EN</button>
             </div>
 <div class="blackboard">
         <div class="moeum-main" id="moeum-main">
