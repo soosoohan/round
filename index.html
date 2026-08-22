@@ -226,7 +226,13 @@ margin-top: 30px;
         font-size: 0.85rem;
         white-space: nowrap; /* 텍스트 줄바꿈 방지 */
     }
-    .back-button {top: 10px;left: 10px;width: 40px;height: 40px;}
+    .back-button {
+      .back-button {
+        top: max(30px, env(safe-area-inset-top) + 10px);
+        left: 10px;
+        width: 40px;
+        height: 40px;
+   }
     .game-buttons button {
         flex: 0 0 calc(100% - 20px); /* 1줄 */
         max-width: 280px;
