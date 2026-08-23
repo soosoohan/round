@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<script>
+  if (window.top !== window.self) {
+    window.top.location = "https://soosooland.com";
+  }
+  console.log("© 2026 Soosooland by 한수수. All rights reserved.");
+  console.log("https://soosooland.com");
+  console.log("🎮 Moeum Save | Born: 2026-01-24");
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4YZHC1G9FN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4YZHC1G9FN');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>모음 세이브</title>
+    <link rel="stylesheet" href="https://soosooland.com/css/protection.css">
+    <script src="https://soosooland.com/js/protection.js"></script>
+<style>
+    :root {
+        --bg-color: #145454;
+        --white-color: #F4F6F5;
+        --black-color: #1B2B2B;
+        --primary-color: #91b2c7;
+        --sub-color: #2F4B5C;
+        --accent-color: #E8956F;
+    }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Malgun Gothic', sans-serif;
+    background: var(--bg-color);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    width: 55px;
+    height: 55px;
+    font-size: 1.8em;
+    font-weight: bold;
+    background: #145454;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.back-button:hover {
+    background: linear-gradient(135deg, #4A628A, #7AB2D3);
+    transform: translateY(-2px);
+}
+
+.title {
+    font-size: 2.0em;
+    font-weight: bold;
+    color: var(--white-color);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: var(--primary-color);
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.game-desc {
+    color: var(--white-color);
+    font-size: 1.1em;
+}
+
+.game-board {
+    background: var(--white-color);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.round-section {
+    background: var(--primary-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--black-color);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.round-display {
+    font-size: 1.3em;
+    color: var(--black-color);
+    font-weight: bold;
+}
+ 
+.score-display {
+    font-size: 1.3em;
+    color: var(--black-color);
+    font-weight: bold;
+}
+
+.hint-section {
+    background: var(--sub-color);
+    color: var(--white-color);
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.hint-text {
+    font-size: 1.3em;
+    color: var(--white-color);
+    font-weight: bold;
+}
+
+.sentence-display {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sentence-area {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    word-break: keep-all;
+    white-space: normal;
+    overflow-wrap: normal;
+}
+.letter-box {
+    display: inline-block;
+    min-width: 0.6em;
+    height: 1.2em;
+    line-height: 1.2em;
+    text-align: center;
+    margin: 2px;
+    white-space: nowrap;
+}
+
+.letter-hidden {
+    background: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.letter-shown {
+    color: var(--black-color);
+}
+
+.space {
+    width: 0.5em;
+}
+
+.win-message {
+    background: rgba(223, 242, 235, 0.9);
+    border: 2px solid #7AB2D3;
+    color: #4A628A;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.next-round-btn {
+    background: var(--sub-color);
+    color: var(--white-color);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.next-round-btn:hover {
+    background: #4A628A;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.final-message {
+    background: var(--accent-color);
+    color: var(--white-color);
+    padding: 30px;
+    border-radius: 12px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.consonant-section {
+    background: var(--white-color);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.title-text-desktop {
+    display: inline;
+}
+
+.title-text-mobile {
+    display: none;
+}
+
+.consonant-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--black-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.consonant-input {
+    width: 50px;
+    height: 40px;
+    font-size: clamp(16px, 1.5em, 24px);
+    text-align: center;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 5px;
+    font-family: 'Malgun Gothic', sans-serif;
+    background: var(--primary-color);
+    color: var(--black-color);
+}
+
+.consonant-input:focus {
+    outline: none;
+    border-color: #4A628A;
+}
+
+.consonant-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.consonant-btn {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: var(--black-color);
+    transition: all 0.3s ease;
+}
+
+.consonant-btn:hover:not(:disabled) {
+    background: var(--sub-color);
+    color: var(--white-color);
+    transform: translateY(-2px);
+}
+
+.consonant-btn:disabled {
+    cursor: not-allowed;
+}
+
+.consonant-btn.correct {
+    background: var(--white-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.consonant-btn.wrong {
+    background: var(--white-color);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.stats {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--white-color);
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.stat-correct {
+    color: var(--primary-color);
+}
+
+.stat-wrong {
+    color: var(--accent-color);
+}
+
+.new-game-btn {
+    background: var(--accent-color);
+    color: var(--black-color);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.new-game-btn:hover {
+    background: linear-gradient(135deg, #4A628A, #7AB2D3);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .back-button {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5em;
+    }
+
+    .title {
+        font-size: 1.8em;
+    }
+
+    .sentence-area {
+        font-size: 1.3em;
+        padding: 15px;
+        min-height: 80px;
+    }
+
+    .consonant-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .consonant-btn {
+        height: 50px;
+        font-size: 1.2em;
+    }
+
+    .consonant-title {
+        font-size: 1em;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .title-text-desktop {
+        display: none;
+    }
+    
+    .title-text-mobile {
+        display: inline;
+    }
+
+    .consonant-input {
+        display: none;
+    }
+
+    .game-info {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .new-game-btn {
+        width: 100%;
+    }
+}
+
+
+</style>
+</head>
+<body>
+<button class="back-button" onclick="location.href='https://soosooland.com/round/index.html'">←</button>
+
+<div class="container">
+    <div class="header">
+        <h1 class="title">모음 세이브</h1>
+        <p class="subtitle">영어 속담을 맞추세요</p>
+    </div>
+
+<div class="game-board">
+    <div class="round-section">
+        <div class="round-display" id="roundDisplay">문제 1/10</div>
+        <div class="score-display" id="scoreDisplay">점수: 0/100</div>
+    </div>
+    
+    <div class="hint-section">
+        <div class="hint-text" id="hintText">게임을 시작하세요!</div>
+    </div>
+
+    <div class="sentence-display">
+        <div class="sentence-area" id="sentenceArea">
+            게임을 시작하세요!
+        </div>
+    </div>
+    
+    <div id="winMessage" style="display: none;">
+        <div class="win-message">
+            🎉 정답! <span id="roundScoreText"></span>점 획득! 🎉
+        </div>
+        <button class="next-round-btn" onclick="nextRound()">다음 라운드 →</button>
+    </div>
+
+    <div id="finalMessage" style="display: none;">
+        <div class="final-message">
+            🎊 게임 완료! 🎊<br><br>
+            최종 점수: <span id="finalScore"></span>/100점
+        </div>
+        <button class="next-round-btn" onclick="restartGame()">처음부터 다시하기</button>
+    </div>
+</div>
+
+<div class="consonant-section">
+    <h3 class="consonant-title">
+        <span class="title-text-desktop">자음을 클릭하거나 입력하세요 →</span>
+        <span class="title-text-mobile">자음을 클릭하세요</span>
+        <input type="text" 
+            class="consonant-input" 
+            id="consonantInput" 
+            maxlength="1" 
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            name="consonant-input-random">
+    </h3>
+    <div class="consonant-grid" id="consonantGrid"></div>
+</div>
+
+<div class="game-info">
+    <div class="stats">
+        <div class="stat-item stat-correct">
+            맞춘 자음: <span id="correctCount">0</span>개
+        </div>
+        <div class="stat-item stat-wrong">
+            틀린 자음: <span id="wrongCount">0</span>개
+        </div>
+    </div>
+    <button class="new-game-btn" onclick="restartGame()">처음부터 다시하기</button>
+</div>
+
+
+</div>
+
+<script>
+const dailyThemes = {
+    
+1: { // 월요일
+    bg: '#145454',
+    white: '#F8F6FA',
+    black: '#241F2B',
+    primary: '#ffaaa1',      // 산호
+    sub: '#9B4A4A',
+    accent: '#6FD0B8',       // 민트그린
+    name: '월요일'
+},
+2: { // 화요일
+    bg: '#145454',
+    white: '#F4F6F5',
+    black: '#1B2B2B',
+    primary: '#91b2c7',      // 청회색
+    sub: '#2F4B5C',
+    accent: '#E8956F',       // 코랄 
+    name: '화요일'
+},
+3: { // 수요일
+    bg: '#145454',
+    white: '#F4F6F5',
+    black: '#1B2B2B',
+    primary: '#7FA89A',      // 민트
+    sub: '#355F56',
+    accent: '#c18ff2',       // 스탬프 보라
+    name: '수요일'
+},
+4: { // 목요일
+    bg: '#145454',
+    white: '#F7F5F0',
+    black: '#2A2320',
+    primary: '#B8C46F',      // 밝은 올리브그린
+    sub: '#6B7A3F',
+    accent: '#f7b2e3',       // pink
+    name: '목요일'
+},
+5: { // 금요일
+    bg: '#145454',
+    white: '#F7F5F0',
+    black: '#2A2320',
+    primary: '#D08A5A',      // 오렌지브라운
+    sub: '#A85432',
+    accent: '#5AB8D0',       // 터코이즈 
+    name: '금요일'
+},
+6: { // 토요일
+    bg: '#145454',
+    white: '#F8F6FA',
+    black: '#241F2B',
+    primary: '#fcdd95',      // 밝은 노랑
+    sub: '#C8A24A',
+    accent: '#a5cbfa',       // 하늘
+    name: '토요일'
+},
+0: { // 일요일
+    bg: '#145454',
+    white: '#F8F6FA',
+    black: '#241F2B',
+    primary: '#9A8FBF',      // 보라
+    sub: '#4E3F73',
+    accent: '#C5D08F',       // 라임 
+    name: '일요일'
+}
+};
+// 페이지 로드 시 요일별 테마 적용
+function applyDailyTheme() {
+    const today = new Date().getDay();
+    const theme = dailyThemes[today];
+    
+    const root = document.documentElement;
+    root.style.setProperty('--bg-color', theme.bg);
+    root.style.setProperty('--white-color', theme.white);
+    root.style.setProperty('--black-color', theme.black);
+    root.style.setProperty('--primary-color', theme.primary);
+    root.style.setProperty('--sub-color', theme.sub);
+    root.style.setProperty('--accent-color', theme.accent);
+    
+    console.log(`오늘의 테마: ${theme.name}`);
+}
+
+// 페이지 로드 시 즉시 실행
+applyDailyTheme();
+
+const sentences = [
+    { "text": "A BAD WORKMAN ALWAYS BLAMES HIS TOOLS", "hint": "나쁜 일꾼은 항상 도구만 탓한다" },
+  { "text": "A BARKING DOG NEVER BITES", "hint": "짖는 개는 물지 않는다" },
+  { "text": "A BLESSING IN DISGUISE", "hint": "변장한 축복" },
+  { "text": "A DROWNING MAN WILL CLUTCH AT A STRAW", "hint": "물에 빠지면 지푸라기라도 잡는다" },
+  { "text": "A FRIEND IN NEED IS A FRIEND INDEED", "hint": "어려울 때 있어주는 친구가 진정한 친구다" },
+  { "text": "A GUILTY CONSCIENCE NEEDS NO ACCUSER", "hint": "양심의 가책은 고발자가 필요없다" },
+  { "text": "A JOURNEY OF THOUSAND MILES BEGINS WITH A SINGLE STEP", "hint": "천릿길도 한 걸음부터" },
+  { "text": "A LEOPARD CANNOT CHANGE ITS SPOT", "hint": "표범은 자기 줄무늬를 바꾸지 못한다" },
+  { "text": "A LION AT HOME, A MOUSE ABROAD", "hint": "집 안에서는 사자 집 밖에서는 쥐" },
+  { "text": "A MISS IS AS GOOD AS A MILE", "hint": "약간 벗어나나 1마일 벗어나나 같다" },
+  { "text": "A PENNY SAVED IS A PENNY EARNED", "hint": "1페니를 아끼면 1페니를 버는 것이다" },
+  { "text": "A PICTURE IS WORTH A THOUSAND WORDS", "hint": "그림 한 장이 천 마디 말의 가치가 있다" },
+  { "text": "A ROLLING STONE GATHERS NO MOSS", "hint": "구르는 돌에는 이끼가 끼지 않는다" },
+  { "text": "A ROTTEN APPLE SPOILS THE BARREL", "hint": "썩은 사과 하나가 한 통의 사과를 망친다" },
+  { "text": "A SOFT ANSWER TURNS AWAY WRATH", "hint": "부드러운 대답이 분노를 물리친다" },
+  { "text": "A WATCHED POT NEVER BOILS", "hint": "솥은 보고만 있으면 끓어오르지 않는다" },
+  { "text": "AFTER A STORM COMES A CALM", "hint": "폭풍이 온 뒤 잠잠하다" },
+  { "text": "AFTER DEATH, THE DOCTOR", "hint": "사후약방문" },
+  { "text": "ALL CHIEFS AND NO INDIANS", "hint": "추장들뿐이고 인디언들이 없다" },
+  { "text": "ALL IS FAIR IN LOVE AND WAR", "hint": "사랑과 전쟁에선 모든 게 정당하다" },
+  { "text": "ALL THAT GLITTERS IS NOT GOLD", "hint": "반짝이는 게 전부 금인 건 아니다" },
+  { "text": "AS WELL BE HANGED FOR A SHEEP AS A LAMB", "hint": "교수형을 당하려면 새끼 양보다는 다 자란 양을 훔치는 것이 낫다" },
+  { "text": "BAD NEWS TRAVELS FAST", "hint": "나쁜 소문은 빨리 퍼진다" },
+  { "text": "BEATING UP THE DEAD HORSE", "hint": "죽은 말 때리기" },
+  { "text": "BE PENNY WISE AND POUND FOOLISH", "hint": "1페니에는 현명하면서 1파운드에는 어리석다" },
+  { "text": "BEGGARS CANNOT BE CHOOSERS", "hint": "없는 놈이 찬밥 더운밥 가리랴" },
+  { "text": "BETTER LATE THAN NEVER", "hint": "늦더라도 안 하는 것보다는 낫다" },
+  { "text": "BETTER SAFE THAN SORRY", "hint": "나중에 후회하기보다는 안전하게 하는 게 낫다" },
+  { "text": "BETTER THE DEVIL YOU KNOW THAN THE DEVIL YOU DO NOT", "hint": "모르는 악마보다는 아는 악마가 낫다" },
+  { "text": "BETWEEN THE DEVIL AND THE BLUE DEEP SEA", "hint": "악마와 깊고 푸른 바다 사이에 있다" },
+  { "text": "BEWARE THE FURY OF A PATIENT MAN", "hint": "인내심 많은 사람의 분노를 조심하라" },
+  { "text": "BIRDS OF A FEATHER FLOCK TOGETHER", "hint": "같은 깃털을 가진 새들끼리 무리를 짓는다" },
+  { "text": "BLOOD IS THICKER THAN WATER", "hint": "피는 물보다 진하다" },
+  { "text": "CANNOT SEE THE WOODS FOR THE TREES", "hint": "나무는 보고 숲을 보지 못한다" },
+  { "text": "CAT IN GLOVES CATCHES NO MICE", "hint": "장갑 낀 고양이는 쥐를 못 잡는다" },
+  { "text": "CHAMPAGNE TASTE ON A BEER BUDGET", "hint": "맥주 살 돈밖에 없으면서 샴페인 애호가 노릇 한다" },
+  { "text": "CHILD IS FATHER OF THE MAN", "hint": "아이는 어른의 아버지다" },
+  { "text": "CONSTANT DRIPPING WEARS AWAY THE STONE", "hint": "낙숫물이 댓돌을 뚫는다" },
+  { "text": "CONSTANT GUEST IS NEVER WELCOME", "hint": "자주 오는 손님은 환영받지 못한다" },
+  { "text": "COURTESY COSTS NOTHING", "hint": "예의는 돈이 들지 않는다" },
+  { "text": "CURIOSITY KILLS THE CAT", "hint": "호기심이 고양이를 죽인다" },
+  { "text": "CUT OFF NOSE TO SPITE FACE", "hint": "코를 베어 얼굴에 앙갚음하다" },
+  { "text": "DON’T BITE THE HAND THAT FEEDS YOU", "hint": "밥 주는 손을 물지 마라" },
+  { "text": "DON’T COUNT YOUR CHICKENS BEFORE THEY ARE HATCHED", "hint": "아직 알에서 깨지 않은 병아리는 세지 마라" },
+  { "text": "DON’T CRY OVER SPILT MILK", "hint": "엎질러진 우유에 울지 마라" },
+  { "text": "DON’T JUDGE A BOOK BY ITS COVER", "hint": "겉표지만 보고 책을 판단하지 마라" },
+  { "text": "DON’T PUT ALL OF YOUR EGGS IN ONE BASKET", "hint": "한 바구니에 가지고 있는 계란을 다 담지 마라" },
+  { "text": "DON’T RUB SALT IN THE WOUND", "hint": "상처에 소금을 문지르지 마라" },
+  { "text": "DRAW WATER WITH A SIEVE", "hint": "체에 물 붓기" },
+  { "text": "EVEN A BROKEN CLOCK IS RIGHT TWICE A DAY", "hint": "고장 난 시계도 하루에 두 번은 맞는다" },
+  { "text": "EVEN HOMER SOMETIMES NODS", "hint": "원숭이도 나무에서 떨어진다" },
+  { "text": "EVEN A WORM WILL TURN", "hint": "지렁이도 밟으면 꿈틀거린다" },
+  { "text": "EVERY CLOUD HAS A SILVER LINING", "hint": "하늘이 무너져도 솟아날 구멍은 있다" },
+  { "text": "EVERY DOG HAS HIS DAY", "hint": "쥐구멍에도 볕 들 날 있다" },
+  { "text": "EVERY JACK HAS HIS JILL", "hint": "짚신도 짝이 있다" },
+  { "text": "EVERY ROSE HAS THORNS", "hint": "모든 장미에는 가시가 있다" },
+  { "text": "FATE WORKS IN A STRANGE WAY", "hint": "운명은 놀라운 길로 간다" },
+  { "text": "FINE FEATHERS MAKE FINE BIRDS", "hint": "옷이 날개다" },
+  { "text": "FOLKS NEVER LOOK UNDER THEIR NOSE", "hint": "등잔 밑이 어둡다" },
+   { "text": "FOOL ME ONCE, SHAME ON YOU. FOOL ME TWICE, SHAME ON ME", "hint": "한 번 속지 두 번 속냐" },
+  { "text": "FROM HELL TO BREAKFAST", "hint": "철저히 맹렬히" },
+  { "text": "GIVE THE DOCTOR A TASTE OF HIS OWN MEDICINE", "hint": "의사가 자기 약을 맛보게 하다" },
+  { "text": "GOING SOUTH", "hint": "망하다" },
+  { "text": "GOING WEST", "hint": "죽다" },
+  { "text": "GOOD MEDICINE TASTES BITTER", "hint": "좋은 약은 입에 쓰다" },
+  { "text": "HE WHO SAVES FOR TOMORROW SAVES FOR THE CAT", "hint": "내일 먹으려고 아껴 두면 고양이가 먹어 버린다" },
+  { "text": "HEAVEN HELPS THOSE WHO HELP THEMSELVES", "hint": "하늘은 스스로 돕는 자를 돕는다" },
+  { "text": "HERDING CATS", "hint": "고양이 몰이꾼, 통제 불가능한 일" },
+  { "text": "HUNGER IS THE BEST SAUCE", "hint": "시장이 반찬이다" },
+  { "text": "IF THAT HAPPENS, I’LL EAT MY HAT", "hint": "내 손에 장을 지진다" },
+  { "text": "IF IT AIN’T BROKE, DON’T FIX IT", "hint": "긁어 부스럼 만들지 마라" },
+  { "text": "IF IT WALKS LIKE A DUCK, IT QUACKS LIKE A DUCK, IT IS A DUCK", "hint": "오리처럼 걷고 오리처럼 울면 오리다" },
+  { "text": "IF YOU CANNOT BEAT THEM, JOIN THEM", "hint": "이길 수 없으면 편을 먹어라" },
+  { "text": "IF YOUR ONLY TOOL IS A HAMMER THEN EVERY PROBLEM LOOKS LIKE A NAIL", "hint": "수중에 연장이 망치 밖에 없다면 모든 문제가 못처럼 보인다" },
+  { "text": "IGNORANCE IS BLISS", "hint": "모르는 게 약이다" },
+  { "text": "I HAVE MY OWN FISH TO FRY", "hint": "내 코가 석 자다" },
+  { "text": "ILL WEEDS GROW APACE", "hint": "잡초는 빨리 자란다" },
+  { "text": "I’M NOT MAKING A DIME FROM IT", "hint": "한 푼도 못 번다" },
+  { "text": "IT’S YOUR FUNERAL", "hint": "너 알아서 해라" },
+  { "text": "JACK OF ALL TRADES, AND MASTER OF NONE", "hint": "열두 가지 재주에 저녁거리가 없다" },
+  { "text": "JUICE IS WORTH THE SQUEEZE", "hint": "누울 자리 봐가며 발 뻗어라" },
+  { "text": "LAUGHTER IS THE BEST MEDICINE", "hint": "웃음이 명약이다" },
+  { "text": "LET THE PUNISHMENT FIT THE CRIME", "hint": "죄에 걸맞은 벌을 내려라" },
+  { "text": "LET THE SLEEPING DOG LIE", "hint": "자는 개를 내버려 둬라" },
+  { "text": "LIFE IS HALF SPENT BEFORE WE KNOW WHAT IT IS", "hint": "철 나자 망령 난다" },
+ { "text": "LIKE A CAT ON A HOT BRICK", "hint": "뜨거운 벽돌 위를 걷는 고양이처럼" },
+  { "text": "LIKE SODOM AND GOMORRAH", "hint": "극도로 부패하고 비도덕함" },
+  { "text": "LOCK THE BARN DOOR AFTER THE HORSE IS STOLEN", "hint": "소 잃고 외양간 고친다" },
+  { "text": "LOOK BEFORE YOU LEAP", "hint": "돌다리도 두드려 보고 건너라" },
+  { "text": "MAKE HAY WHILE THE SUN SHINES", "hint": "쇠뿔도 단김에 빼라" },
+  { "text": "MONEY TALKS", "hint": "돈이 제갈량" },
+  { "text": "MORE THAN ONE WAY TO SKIN A CAT", "hint": "고양이 가죽을 벗기는 방법은 여러 가지다" },
+  { "text": "NEEDS MUST WHEN THE DEVIL DRIVES", "hint": "필요에 몰리면 안 할 수가 없다" },
+  { "text": "NEVER SEND A BOY TO DO A MAN’S JOB", "hint": "남자가 할 일에 꼬마를 보내지 마라" },
+  { "text": "NO PAIN, NO GAIN", "hint": "고통 없이는 아무것도 얻지 못한다" },
+  { "text": "NO REST FOR THE WICKED", "hint": "쉴 틈이 없다" },
+  { "text": "NO ROSES WITHOUT A THORN", "hint": "가시 없는 장미는 없다" },
+  { "text": "NO ROOM TO SWING A CAT", "hint": "고양이 던져 넣을 자리도 없다" },
+  { "text": "ONE MAN’S TRASH IS ANOTHER MAN’S TREASURE", "hint": "한 사람의 쓰레기는 다른 사람에겐 소중할 수 있다" },
+  { "text": "OUT OF SIGHT, OUT OF MIND", "hint": "눈에서 멀어지면 마음에서도 멀어진다" },
+  { "text": "PIE IN THE SKY", "hint": "그림의 떡" },
+  { "text": "PRACTICE MAKES PERFECT", "hint": "계속 연습하다 보면 완벽해진다" },
+  { "text": "RED HERRING", "hint": "훈제 청어" },
+  { "text": "ROME WAS NOT BUILT IN A DAY", "hint": "로마는 하루아침에 이루어지지 않았다" },
+  { "text": "SEEING IS BELIEVING", "hint": "백문불여일견" },
+  { "text": "SLOW AND STEADY WINS THE RACE", "hint": "느리지만 꾸준히 하면 이긴다" },
+  { "text": "SPEECH IS SILVER, SILENCE IS GOLDEN", "hint": "웅변은 은이요 침묵은 금이다" },
+  { "text": "STRIKE WHILE THE IRON IS HOT", "hint": "철이 뜨거울 때 두드려라" },
+  { "text": "STUCK IN THE CRAW", "hint": "밥통에 들러붙다" },
+  { "text": "TEACHING GRANDMA TO SUCK EGGS", "hint": "석가에게 설법하기" },
+  { "text": "THE APPLE NEVER FALLS FAR FROM THE TREE", "hint": "사과는 나무에서 먼 데 떨어지지 않는다" },
+  { "text": "THE BREAD ALWAYS FALLS BUTTERD SIDE DOWN", "hint": "빵은 꼭 버터를 바른 쪽이 밑으로 해서 떨어진다" },
+  { "text": "THE DEAD ARE SOON FORGOTTEN", "hint": "죽은 사람은 곧 잊어진다" },
+  { "text": "THE EARLY BIRD CATCHES THE WORM", "hint": "일찍 일어나는 새가 벌레를 잡는다" },
+  { "text": "THE NET OF THE SLEEPER CATCHES FISH", "hint": "잠자고 있던 사람의 그물에 고기가 잡힌다" },
+  { "text": "THE PEN IS MIGHTIER THAN THE SWORD", "hint": "펜은 칼보다 강하다" },
+  { "text": "THE POT CALLS THE KETTLE BLACK", "hint": "솥이 주전자를 검다고 한다" },
+  { "text": "THE SQUEAKY WHEEL GETS THE GREASE", "hint": "삐걱거리는 바퀴가 윤활유를 먹는다" },
+  { "text": "THE WALLS HAVE EARS", "hint": "낮말은 새가 듣고 밤말은 쥐가 듣는다" },
+  { "text": "TIME IS THE HERALD OF TRUTH", "hint": "시간은 진실의 전령사다" },
+  { "text": "TOUCHING THE THIRD RAIL", "hint": "섶을 지고 불 속에 들어가기" },
+  { "text": "TOO MANY COOKS SPOIL THE BROTH", "hint": "요리사가 너무 많으면 죽을 망친다" }
+];
+
+const consonants = ['B','C','D','F','G','H','J','K','L','M','N','P','Q','R','S','T','V','W','X','Y','Z'];
+const vowels = ['A','E','I','O','U'];
+
+let currentSentence = '';
+let displayArray = [];
+let currentRound = 1;
+let totalScore = 0;
+let roundScore = 10;
+let correctCount = 0;
+let wrongCount = 0;
+let shuffledSentences = [];
+
+function shuffleSentences() {
+    shuffledSentences = [...sentences];
+    for (let i = shuffledSentences.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledSentences[i], shuffledSentences[j]] = [shuffledSentences[j], shuffledSentences[i]];
+    }
+}
+
+function startGame() {
+    currentRound = 0;
+    totalScore = 0;
+    shuffleSentences();
+    nextRound();
+}
+
+function nextRound() {
+    // 이전 라운드 점수를 총점에 추가
+    if (currentRound > 0) {
+        totalScore += roundScore;
+    }
+    
+    // 10라운드 완료 체크
+    if (currentRound >= 10) {
+        showFinalScore();
+        return;
+    }
+    
+    // 새 라운드 시작
+    currentRound++;
+    roundScore = 10;
+    correctCount = 0;
+    wrongCount = 0;
+    
+    // UI 업데이트
+    updateStats();
+    document.getElementById('roundDisplay').textContent = `문제 ${currentRound}/10`;
+    document.getElementById('scoreDisplay').textContent = `점수: ${totalScore}/100`;
+    document.getElementById('winMessage').style.display = 'none';
+    document.getElementById('finalMessage').style.display = 'none';
+    
+    // 문장 설정
+    const data = shuffledSentences[currentRound - 1];
+    currentSentence = data.text.toUpperCase();
+    document.getElementById('hintText').textContent = data.hint;
+    
+    // 게임 표시
+    displaySentence();
+    createConsonantButtons();
+}
+
+function displaySentence() {
+    displayArray = [];
+    const area = document.getElementById('sentenceArea');
+    area.innerHTML = '';
+    
+    const words = currentSentence.split(' ');
+    
+    words.forEach((word, wordIndex) => {
+        const wordSpan = document.createElement('span');
+        wordSpan.style.display = 'inline-block';
+        wordSpan.style.whiteSpace = 'nowrap';
+        
+        for (let char of word) {
+            const span = document.createElement('span');
+            span.className = 'letter-box';
+            
+            if (vowels.includes(char) || !char.match(/[a-z]/i)) {
+                span.textContent = char;
+                span.className = 'letter-box letter-shown';
+            } else {
+                span.textContent = char;
+                span.className = 'letter-box letter-hidden';
+                displayArray.push(span);
+            }
+            
+            wordSpan.appendChild(span);
+        }
+        
+        area.appendChild(wordSpan);
+        
+        if (wordIndex < words.length - 1) {
+            const space = document.createElement('span');
+            space.className = 'space';
+            space.innerHTML = '&nbsp;';
+            area.appendChild(space);
+        }
+    });
+}
+
+function createConsonantButtons() {
+    const grid = document.getElementById('consonantGrid');
+    grid.innerHTML = '';
+    
+    consonants.forEach(con => {
+        const btn = document.createElement('button');
+        btn.className = 'consonant-btn';
+        btn.textContent = con;
+        btn.onclick = () => checkConsonant(con, btn);
+        grid.appendChild(btn);
+    });
+}
+
+function checkConsonant(consonant, btn) {
+    btn.disabled = true;
+    
+    let found = false;
+    displayArray.forEach(span => {
+        if (span.textContent.toUpperCase() === consonant) {
+            span.className = 'letter-box letter-shown';
+            found = true;
+        }
+    });
+    
+    if (found) {
+        // 맞춘 경우
+        btn.className = 'consonant-btn correct';
+        correctCount++;
+    } else {
+        // 틀린 경우
+        btn.className = 'consonant-btn wrong';
+        wrongCount++;
+        roundScore = Math.max(0, roundScore - 1);
+    }
+    
+    updateStats();
+    checkWin();
+}
+
+function updateStats() {
+    document.getElementById('correctCount').textContent = correctCount;
+    document.getElementById('wrongCount').textContent = wrongCount;
+}
+
+function checkWin() {
+    const allShown = displayArray.every(span => 
+        span.className.includes('letter-shown')
+    );
+    
+    if (allShown) {
+        document.getElementById('roundScoreText').textContent = roundScore;
+        document.getElementById('winMessage').style.display = 'block';
+        disableAllButtons();
+    }
+}
+
+function disableAllButtons() {
+    document.querySelectorAll('.consonant-btn').forEach(btn => {
+        btn.disabled = true;
+    });
+}
+
+function showFinalScore() {
+    document.getElementById('finalScore').textContent = totalScore;
+    document.getElementById('finalMessage').style.display = 'block';
+    document.getElementById('winMessage').style.display = 'none';
+    disableAllButtons();
+}
+
+function restartGame() {
+    currentRound = 0;
+    totalScore = 0;
+    correctCount = 0;
+    wrongCount = 0;
+    updateStats();
+    shuffleSentences();
+    nextRound();
+}
+
+// 게임 시작
+startGame();
+</script>
+
+</body>
+</html>
