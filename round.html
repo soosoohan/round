@@ -50,22 +50,12 @@ margin: 0 auto;
 text-align: center;
 margin-bottom: 30px;
 }
-  .back-button {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        padding: 10px;
-        font-size: 1.3em;
-        font-weight: bold;
-        background: #145454;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        z-index: 100;
-        max-width:70px;
-    }
+.back-button { position: fixed; top: max(48px, env(safe-area-inset-top) + 20px); left: 22px; width: 44px; height: 44px; padding: 0; font-size: 1.8em; font-weight: bold; 
+       background: #145454;
+       color: white;
+    border-radius: 12px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;z-index: 100;}
+
+  
     .back-button:hover {
         background: linear-gradient(135deg, #4A628A, #7AB2D3);
         transform: translateY(-2px);
@@ -462,12 +452,11 @@ margin-top: 30px;
         height: 45px;
         display: none;  /* 입력창 숨기기 */
     }    
-
 }
-
-
+@media (max-width: 480px) {   
+.back-button { top: max(30px, env(safe-area-inset-top) + 10px); left: 10px; width: 40px; height: 40px; font-size: 1.5em; }
+}
 </style>
-
 </head>
 <body>
 <button class="back-button" onclick="location.href='https://soosooland.com/round/index.html'">←</button>
