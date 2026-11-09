@@ -304,30 +304,72 @@ Game files are arranged by difficulty level, getting harder as you go down.<br><
     </div>       
     </div>
   </div>
-  <div class="game_container">
-      <div class="game-buttons">
-        <button onclick="playGame('word', '따뜻한 말')">따뜻한 말</button>
-        <button onclick="playGame('sokdam', '속담')">속담</button>
-        <button onclick="playGame('food', '음식')">🍽️ 음식</button>
-        <button onclick="playGame('dongmul', '동물')">🦁 동물</button>
-        <button onclick="playGame('riddles', '수수께끼')">❓ 수수께끼</button>
-        <button onclick="playGame('chostory', '초등 국사')">초등 국사</button>
-        <button onclick="playGame('grade6', '모음스쿨 6학년')">모음스쿨 6학년</button>
-        <button onclick="playGame('world', '대륙 나라 수도')">대륙 나라 수도</button>
-        <button onclick="playGame('goyu','고유어')">📚 고유어</button>
-        <button onclick="playGame('sikmul', '동물이 아닌 생물')">동물이 아닌 생물</button>
-        <button onclick="playGame('jungstory', '중학교 국사')">중학교 국사</button>
-        <button onclick="playGame('korea', '한국 여행')">한국 여행</button>
-        <button onclick="playGame('saja', '사자성어')">사자성어</button>
-        <button onclick="playGame('book', '저자와 저서')">저자와 저서</button>
-        <button onclick="playGame('movie', '영화 드라마')">영화 드라마</button>
-        <button onclick="playGame('coffee', '커피와 원두')">커피와 원두</button>
-        <button onclick="playGame('dict6', '모음사전 6학년')">모음사전 6학년</button>
-        <button onclick="playGame('proverb', '서양 속담')">서양 속담</button>   
-        <button onclick="location.href='save1.html'">영어 속담</button>   
-      </div>
+ 
+<div class="game_container">
+  <div class="tabs">
+    <button class="tab" onclick="showTab('culture')">문화 상식</button>
+    <button class="tab" onclick="showTab('nature')">사회 과학</button>
+    <button class="tab active" onclick="showTab('study')">언어 학습</button>
+    <button class="tab" onclick="showTab('school')">모음스쿨</button>
+    <button class="tab" onclick="showTab('dict')">모음사전</button>
   </div>
-    <footer>
+
+  <div class="game-buttons" id="tab-culture">
+     <button onclick="playGame('word', '따뜻한 말')">따뜻한 말</button>
+     <button onclick="playGame('food', '음식')">🍽️ 음식</button>
+     <button onclick="playGame('movie', '영화 드라마')">영화 드라마</button>
+     <button onclick="playGame('coffee', '커피와 원두')">커피와 원두</button>
+     <button onclick="playGame('riddles', '수수께끼')">수수께끼</button>
+  </div>
+
+  <div class="game-buttons" id="tab-nature">
+     <button onclick="playGame('dongmul', '동물')">🦁 동물</button>
+     <button onclick="playGame('sikmul', '동물이 아닌 생물')">동물이 아닌 생물</button>
+     <button onclick="playGame('korea', '한국 여행')">한국 여행</button>
+    <button onclick="playGame('world','대륙 나라 수도')">대륙 나라 수도</button>
+  </div>
+
+  <div class="game-buttons" id="tab-study">
+    <button onclick="playGame('goyu','고유어')">📚 고유어</button>
+    <button onclick="playGame('sokdam','속담')">속담</button>
+    <button onclick="playGame('saja','사자성어')">사자성어</button>
+    <button onclick="playGame('chostory', '초등 국사')">초등 국사</button>
+    <button onclick="playGame('jungstory', '중학교 국사')">중학교 국사</button>
+    <button onclick="playGame('proverb', '서양 속담')">서양 속담</button>
+    <button onclick="playGame('book', '저자와 저서')">저자와 저서</button>
+  </div>
+  
+
+  <div class="game-buttons" id="tab-school">
+    <button onclick="playGame('grade1-1','모음스쿨 1학년 1학기')">모음스쿨 1학년 1학기</button>
+    <button onclick="playGame('grade1-2','모음스쿨 1학년 2학기')">모음스쿨 1학년 2학기</button>
+    <button onclick="playGame('grade2-1','모음스쿨 2학년 1학기')">모음스쿨 2학년 1학기</button>
+    <button onclick="playGame('grade2-2','모음스쿨 2학년 2학기')">모음스쿨 2학년 2학기</button>
+    <button onclick="playGame('grade3-1','모음스쿨 3학년 1학기')">모음스쿨 3학년 1학기</button>
+    <button onclick="playGame('grade3-2','모음스쿨 3학년 2학기')">모음스쿨 3학년 2학기</button>
+    <button onclick="playGame('grade4-1','모음스쿨 4학년 1학기')">모음스쿨 4학년 1학기</button>
+    <button onclick="playGame('grade4-2','모음스쿨 4학년 2학기')">모음스쿨 4학년 2학기</button>
+    <button onclick="playGame('grade5-1','모음스쿨 5학년 1학기')">모음스쿨 5학년 1학기</button>
+    <button onclick="playGame('grade5-2','모음스쿨 5학년 2학기')">모음스쿨 5학년 2학기</button>
+    <button onclick="playGame('grade6-1','모음스쿨 6학년 1학기')">모음스쿨 6학년 1학기</button>
+  </div>
+
+
+    <div class="game-buttons" id="tab-dict">
+    <button onclick="playGame('dict1-1','모음사전 1학년 1학기')">모음사전 1학년 1학기</button>
+    <button onclick="playGame('dict1-2','모음사전 1학년 2학기')">모음사전 1학년 2학기</button>
+    <button onclick="playGame('dict2-1','모음사전 2학년 1학기')">모음사전 2학년 1학기</button>
+    <button onclick="playGame('dict2-2','모음사전 2학년 2학기')">모음사전 2학년 2학기</button>
+    <button onclick="playGame('dict3-1','모음사전 3학년 1학기')">모음사전 3학년 1학기</button>
+    <button onclick="playGame('dict3-2','모음사전 3학년 2학기')">모음사전 3학년 2학기</button>
+    <button onclick="playGame('dict4-1','모음사전 4학년 1학기')">모음사전 4학년 1학기</button>
+    <button onclick="playGame('dict4-2','모음사전 4학년 2학기')">모음사전 4학년 2학기</button>
+    <button onclick="playGame('dict5-1','모음사전 5학년 1학기')">모음사전 5학년 1학기</button>
+    <button onclick="playGame('dict5-2','모음사전 5학년 2학기')">모음사전 5학년 2학기</button>
+    <button onclick="playGame('dict6-1','모음사전 6학년 1학기')">모음사전 6학년 1학기</button>
+  </div>
+  </div>
+  <footer>
   <p>© 2025 Han Soosoo. All rights reserved.</p>
 </footer>
 
