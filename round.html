@@ -984,16 +984,16 @@ function showConsonants() {
   if (stats) stats.style.display = '';
 }
 
-
-    
 function showFinalScore() {
     document.getElementById('finalScore').textContent = totalScore;
     document.getElementById('finalMessage').style.display = 'block';
     document.getElementById('winMessage').style.display = 'none';
-    hideConsonants();   // ← 추가
+    document.querySelector('.game-board').style.display = 'none';
+    hideConsonants();
 }
 function restartGame() {
-    showConsonants();   // ← 추가
+    document.querySelector('.game-board').style.display = '';
+    showConsonants();
     currentRound = 1;
     totalScore = 0;
     startRound();
