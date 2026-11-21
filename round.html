@@ -504,7 +504,7 @@ margin-top: 30px;
     </div>
   </div>
 </div>
-  <div class="consonant-section">
+<div class="consonant-section" id="consonantSection">
   <h3 class="consonant-title">
     <span class="title-text-desktop">자음을 클릭하거나 입력하세요 →</span>
     <span class="title-text-mobile">자음을 클릭하세요</span>
@@ -957,18 +957,35 @@ function nextRound() {
     startRound();
 }
 
+
+function hideConsonants() {
+  const sec = document.querySelector('.consonant-section');
+  const stats = document.getElementById('gameStats');
+  if (sec) sec.style.display = 'none';
+  if (stats) stats.style.display = 'none';
+}
+function showConsonants() {
+  const sec = document.querySelector('.consonant-section');
+  const stats = document.getElementById('gameStats');
+  if (sec) sec.style.display = '';
+  if (stats) stats.style.display = '';
+}
+
+
+    
 function showFinalScore() {
     document.getElementById('finalScore').textContent = totalScore;
     document.getElementById('finalMessage').style.display = 'block';
     document.getElementById('winMessage').style.display = 'none';
+    hideConsonants();   // ← 추가
 }
 function restartGame() {
+    showConsonants();   // ← 추가
     currentRound = 1;
     totalScore = 0;
     startRound();
 }
 
-// 변경 후
 window.onload = async function () {
     const success = await loadWordpool();
     if (success) {
