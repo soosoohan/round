@@ -375,9 +375,17 @@ font-weight: bold;
 color: #e386c7;
 }
 
+.final-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 15px auto 0;
+  border-radius: 12px;
+}
+
 .new-game-btn {
-background: linear-gradient(135deg, #7AB2D3, #4A628A);
-color: white;
+background: #d6d28b;
+color: #145454;
 padding: 10px 20px;
 border: none;
 border-radius: 8px;
@@ -497,12 +505,15 @@ margin-top: 30px;
         😔 게임 종료! 정답을 확인하세요.
     </div>
   </div>
-  <div id="finalMessage" class="final-message" style="display: none;">
-    <div class="final-alert">
-        🎊 게임 완료! 🎊<br>
-        최종 점수: <span id="finalScore"></span>/100점
-    </div>
+ 
+<div id="finalMessage" class="final-message" style="display: none;">
+  <div class="final-alert">
+      🎊 게임 완료! 🎊<br>
+      최종 점수: <span id="finalScore"></span>/100점
   </div>
+  <img src="moeumround.png" alt="모음라운드 완료" class="final-image">
+</div>
+    
 </div>
 <div class="consonant-section" id="consonantSection">
   <h3 class="consonant-title">
@@ -527,6 +538,8 @@ margin-top: 30px;
         맞춘 자음: 0개 | 틀린 자음: 0개
     </div>
 <button class="new-game-btn" onclick="restartGame()">처음부터 다시하기</button>
+<button class="new-game-btn" onclick="location.href='index.html'">다른 게임하기</button>
+
   </div>
 </div>
   <footer>
