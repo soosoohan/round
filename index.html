@@ -154,7 +154,7 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.25);
 
 }
 .moeum-main {
-  width: 90%;
+  width: 100%;
   max-width: var(--content-width);
   box-sizing: border-box;
   margin: 0 auto;
@@ -169,7 +169,7 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.25);
   max-width: var(--content-width);
       background-color: #0E756D;
       color: white;
-      width: 90%;
+      width: 100%;
       margin: auto;
       padding: 20px;
       border-radius: 0;
@@ -190,9 +190,9 @@ box-shadow: 0 2px 6px rgba(0,0,0,0.25);
     }
 
     .game-buttons button {
-      width: 200px;
       height: 52px;
-      padding: 16px 0;
+      min-width: 100px;
+      padding: 16px 5px 16px;
       font-size: 1.1em;
       cursor: pointer;
       border: none;
@@ -236,21 +236,7 @@ margin-top: 30px;
         display: none;
     }
 
-    /* 반응형 레이아웃 */
-    @media (min-width: 800px) {
-      .game-buttons button {
-        flex: 0 0 calc(33.333% - 20px); /* 3줄 */
-        max-width: 200px;
-      }
-    }
-
-    @media (max-width: 799px) and (min-width: 500px) {
-      .game-buttons button {
-        flex: 0 0 calc(50% - 20px); /* 2줄 */
-        max-width: 200px;
-      }
-    }
-
+    
     @media (max-width: 499px) {
       
     .language-toggle {
@@ -272,13 +258,9 @@ margin-top: 30px;
         width: 40px;
         height: 40px;
    }
-    .game-buttons button {
-        flex: 0 0 calc(100% - 20px); /* 1줄 */
-        max-width: 280px;
-      }
       
     .game_container {
-        width: 95%;
+        width: 100%;
       }
     }
 </style>
